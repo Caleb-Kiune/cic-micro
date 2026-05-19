@@ -12,23 +12,9 @@ export const cohortSchema = z.object({
 
 export type CohortInput = z.infer<typeof cohortSchema>;
 
-export const groupQuoteSchema = z
-  .object({
-    groupName: z.string().min(2, "Group name is required"),
-    cohorts: z.array(cohortSchema),
-  })
-  .refine(
-    (data) => {
-      const totalFamilies = data.cohorts.reduce(
-        (sum, cohort) => sum + cohort.multiplier,
-        0,
-      );
-      return totalFamilies >= 4;
-    },
-    {
-      message: "A minimum of 4 principal members is required for Coop Care.",
-      path: ["cohorts"],
-    },
-  );
+export const groupQuoteSchema = z.object({
+  groupName: z.string().min(2, "Group name is required"),
+  cohorts: z.array(cohortSchema),
+});
 
 export type GroupQuoteInput = z.infer<typeof groupQuoteSchema>;
