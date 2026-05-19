@@ -3,13 +3,9 @@ import Link from "next/link";
 export default function DashboardPage() {
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-8 font-sans">
-      <header className="mb-8 mt-4">
-        <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">
-          CIC Micro Hub
-        </h1>
-        <p className="text-gray-600 mt-2">
-          Select a product to generate a new official quote.
-        </p>
+      <header className="mb-8 mt-2">
+        <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">Select Product</h1>
+        <p className="text-gray-600 mt-1 text-sm">Tap a calculator below to begin a new quote.</p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
